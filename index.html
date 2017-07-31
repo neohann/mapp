@@ -1,95 +1,119 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<style>
+<title>Pets in US Narrative Visualization</title>
+</head>
 
-.counties {
-  fill: none;
-}
+  <body class=" hasGoogleVoiceExt" style="cursor: default;">
+<a class="navbar-brand">Pets in US Narrative Visualization</a>
+<div class="container">
+           <div class="col-lg-12 text-center">
+           <a href="https://neohann.github.io/33/index.html">
+           <button type="button" class="btn btn-default btn-lg btn-primary">
+             <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Scene 1
+           </button></a>
+           </div>
 
-.states {
-  fill: none;
-  stroke: #fff;
-  stroke-linejoin: round;
-}
+           <div class="container">
+           <div class="col-lg-12 text-center">
+           <a href="https://neohann.github.io/33/2/index.html">
+           <button type="button" class="btn btn-default btn-lg btn-primary">
+             <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Scene 2
+           </button></a>
+           </div>
+<div class="container">
+           <div class="col-lg-12 text-center">
+           <a href="https://neohann.github.io/33/3/index.html">
+           <button type="button" class="btn btn-default btn-lg btn-primary">
+             <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Scene 3
+           </button></a>
+           </div>
+<div class="container">
+           <div class="col-lg-12 text-center">
+           <a href="https://neohann.github.io/33/4/index.html">
+           <button type="button" class="btn btn-default btn-lg btn-primary">
+             <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Scene 4
+           </button></a>
+           </div>
+  
 
-</style>
-<svg width="960" height="600"></svg>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://d3js.org/topojson.v2.min.js"></script>
-<script>
+   <div id="vis-tooltip" class="vg-tooltip"></div>
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height");
+        <div class="container">
 
-var unemployment = d3.map();
+          <div class="page-header">
+            <h1>Scene 1: Pet Households in US -- Number One</h1>
+          </div>
+          <p class="lead">
+                          What are the top three states with the highest number of pet households is an interesting question. Someone may take a guess. New York? Pennsylvania? Nope. If you are interested in this question, this Pet households narrative visualization has the right information for you.</p>
+          <p class="lead">
+                          Let me first define what is “pet” mean here. It simply means ONLY dogs and cats. Other kinds of animals such as birds and snakes are not included in this data.  
+                         <br>
+                         
+          <p class="lead">
+                         
 
-var path = d3.geoPath();
+                         California has the highest number of household who has pets. This means if one household has only cats, only dogs or both cats and dogs is included here.  California is the number one in number of pet households. Did you have the right guess?<br>
 
-var x = d3.scaleLinear()
-    .domain([1, 10])
-    .rangeRound([600, 860]);
+                         <div class="text-center">
+                         Reference Data:<br>
+                         <a href="https://www.avma.org/KB/Resources/Statistics/Pages/Market-research-statistics-US-pet-ownership.aspx" target="_blank">
+                                  <p class="lead">
+                                   
+                                   https://www.avma.org/KB/Resources/Statistics/Pages/Market-research-statistics-US-pet-ownership.aspx</p></a>
+                         </div>
+                         </p>
 
-var color = d3.scaleThreshold()
-    .domain(d3.range(2, 10))
-    .range(d3.schemeBlues[9]);
 
-var g = svg.append("g")
-    .attr("class", "key")
-    .attr("transform", "translate(0,40)");
+         <br>
+         <br>
+         	
+          <img src="ca.png">
 
-g.selectAll("rect")
-  .data(color.range().map(function(d) {
-      d = color.invertExtent(d);
-      if (d[0] == null) d[0] = x.domain()[0];
-      if (d[1] == null) d[1] = x.domain()[1];
-      return d;
-    }))
-  .enter().append("rect")
-    .attr("height", 8)
-    .attr("x", function(d) { return x(d[0]); })
-    .attr("width", function(d) { return x(d[1]) - x(d[0]); })
-    .attr("fill", function(d) { return color(d[0]); });
+          <div class="container" id="aboutVisualization" style="padding-bottom: 30px;">
+           <button class="accordion">ABOUT THE VISUALIZATION--SCENE 1</button>
+              <div class="panel">
+                <h3>Summary:</h3>
+                <p class="lead"><b>Martini Glass</b> structure were used in this narrative visualization. The main focus is to answer the question started in the narrative: "What are the top three states with the highest number of pet households?" Scene 1, scene 2 and scene 3 are answering the question one by one with author driven contents which showed the top one, two and three states that has the most pet households. "Jumping off point" is in Scene 3 to lead users to the final scene, scene 4. 
+                </p>
+                <p>Scene 4 contains reader driven content. It allows users to interact with the charts and know more detail on what they are interested in. All the Scenes follow the same template. Also, <b>D3</b> were used in this Visualization on Scene 4 to offer interactions. Finally, impages was used to make the pages load faster in Scence 1,2 and 3 because no interaction needed in these three scenes. (As consulted the instructor during office hour, author-driven scenes could be as simple as ONLY using text narrative without any charts.) </p>
+                 
+                <h3>In This Scene:</h3>
+                
+                </p>
+                
+                  <h3>Parameters</h3>
+                  <p class="lead">There are a few parameters used in the scene:
+                <p class="lead">1 Scene number. In this Scene, it is scene 1.
+<p class="lead">2 Ranking of number of pet households. In this scene, California has the highest number of pet households.</p>
+<p class="lead">3 States. This parameter is California.</p>
+<p class="lead">4 Red highlight state on the map.</p>
+                <h3>Triggers</h3>
+                <p class="lead">According to the course videos, the trigger could be the connections between parameters. So when clicking “scene 1” and change to scene 1, the ranking of the number of pet household, the states, and red highlight, will be changed.</p>
 
-g.append("text")
-    .attr("class", "caption")
-    .attr("x", x.range()[0])
-    .attr("y", -6)
-    .attr("fill", "#000")
-    .attr("text-anchor", "start")
-    .attr("font-weight", "bold")
-    .text("Unemployment rate");
+                </p>
+                
 
-g.call(d3.axisBottom(x)
-    .tickSize(13)
-    .tickFormat(function(x, i) { return i ? x : x + "%"; })
-    .tickValues(color.domain()))
-  .select(".domain")
-    .remove();
 
-d3.queue()
-    .defer(d3.json, "https://d3js.org/us-10m.v1.json")
-    .defer(d3.csv, "data.csv", function(d) { unemployment.set(d.id, +d.rate); })
-    .await(ready);
+              </p></div>
 
-function ready(error, us) {
-  if (error) throw error;
+         </div>
 
-  svg.append("g")
-      .attr("class", "counties")
-    .selectAll("path")
-    .data(topojson.feature(us, us.objects.counties).features)
-    .enter().append("path")
-      .attr("fill", function(d) { return color(d.rate = unemployment.get(d.id)); })
-      .attr("d", path)
-    .append("title")
-      .text(function(d) { return d.rate + "%"; });
+         <div class="container">
+           <div class="col-lg-12 text-center">
+           <a href="https://neohann.github.io/33/2/index.html">
+           <button type="button" class="btn btn-default btn-lg btn-primary">
+             <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>Next
+           </button></a>
+           </div>
 
-  svg.append("path")
-      .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
-      .attr("class", "states")
-      .attr("d", path);
-}
 
-</script>
+         </div>
+
+        </div><!-- /.container -->
+
+  </body>
+  </html>
